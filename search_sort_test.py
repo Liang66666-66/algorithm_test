@@ -71,8 +71,6 @@
     
 # print(add([1,2,3,4,7],8))
  
-with open ("D:\Python_files\diary.txt",'r',encoding='utf-8') as f:
-    print(f.readlines())
 
 
 
