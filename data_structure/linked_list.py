@@ -39,6 +39,8 @@ def create_tail_linklist(lst):
     
     return head
 
+
+#链表新增节点
 def linklist_insert(lklist,num,pos):
     """
     linklist_insert 的 Docstring
@@ -66,16 +68,26 @@ def linklist_insert(lklist,num,pos):
         key=key.next
 
     return lklist
-    
-def linklist_delete(lklist,pos):
-    front_element=lklist
-    for i in range(pos-2):
-        front_element=front_element.next
-    del_element=front_element.next
-    behind_element=del_element.next
-    del_element.next=None
-    front_element.next=behind_element
 
+
+#链表删除节点
+def linklist_delete(lklist,pos):
+    """
+    linklist_delete 的 Docstring
+    
+    :param lklist: 链表
+    :param pos: 要删除节点所在位置
+    """
+
+    front_element=lklist #循环开始前定义前节点，赋值为头部节点
+    for i in range(pos-2): 
+        front_element=front_element.next #循环找到前节点位置
+    del_element=front_element.next #找到预删除节点
+    behind_element=del_element.next #找到后节点
+    del_element.next=None #断开预删除节点和后节点的连接
+    front_element.next=behind_element #连接前节点和后节点
+
+    # 打印链表
     key=lklist
     while key:
         print(key.item,end=' ')
