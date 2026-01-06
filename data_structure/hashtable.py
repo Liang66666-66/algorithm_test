@@ -1,12 +1,13 @@
+# 节点类
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
 
+# 链表类
 class LinkedList:
     def __init__(self):
         self.head = None
-        self.tail=None
 
     def add_at_tail(self,data):
         if self.head is None:
@@ -58,19 +59,13 @@ class LinkedList:
         
         return " -> ".join(result) + " -> None"
 
-# linklst1=LinkedList()
-# linklst1.add_at_tail(1)
-# linklst1.add_at_tail(2)
-# linklst1.add_at_tail(3)
-# linklst1.add_at_tail(4)
-# linklst1.del_data(3)
-# linklst1.del_data(4)
-# print(linklst1)
 
+
+#哈希表类
 class Hashtable:
     def __init__(self,size):
         self.size=size
-        self.buckets=[LinkedList() for _ in range(size)]
+        self.buckets=[LinkedList() for _ in range(size)] #新增一个buckets属性用来存储所有链表
         
     def hash_func(self,num):
         hash_num=num%self.size
@@ -97,7 +92,8 @@ class Hashtable:
                 result.append(f"槽位[{i}]: 空")
         
         return "\n".join(result)
-    
+
+#测试   
 hashtable1=Hashtable(7)
 hashtable1.add_item(1)
 hashtable1.add_item(4)

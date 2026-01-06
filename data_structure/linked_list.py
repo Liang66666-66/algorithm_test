@@ -96,7 +96,7 @@ def linklist_delete(lklist,pos):
     return lklist
 
 
-# lk1=create_head_linklist([1,2,3,4,5,6])
+# 测试
 lk2=create_tail_linklist([1,2,3,4,5,6])
 print()
 lk3=linklist_insert(lk2,8,4)
